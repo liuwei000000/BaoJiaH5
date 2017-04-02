@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>GreenPak报价</title>
+		<link rel="stylesheet" href="../style/weui.css"/>
+		<link rel="stylesheet" href="./example.css"/>
+	</head>
+	<body ontouchstart>
+		<div class="container" id="container"></div>
+		<script type="text/html" id="tpl_home">
+		<div class="page">
+			<div class="page__hd">
+				<h1 class="page__title">Input</h1>
+				<img src="home.png">
+				<p class="page__desc">GreenPak报价</p>
+			</div>
+			<form name="form">
+				<div class="weui-cells weui-cells_form">
+					<div class="weui-cell">
+						<div class="weui-cell__hd"><label class="weui-label">验证密码</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="text" name="yanzheng"/>
+						</div>
+					</div>
+					<div class="weui-cells__title">单位</div>
+					<div class="weui-cells weui-cells_radio">
+						<label class="weui-cell weui-check__label" for="x11">
+							<div class="weui-cell__bd">
+								<p>英寸</p>
+							</div>
+							<div class="weui-cell__ft">
+								<input type="radio" class="weui-check" name="danwei" value="y" checked="checked" id="x11">
+								<span class="weui-icon-checked"></span>
+							</div>
+						</label>
+						<label class="weui-cell weui-check__label" for="x12">
+							<div class="weui-cell__bd">
+								<p>毫米</p>
+							</div>
+							<div class="weui-cell__ft">
+								<input type="radio" name="danwei" class="weui-check" value="m" id="x12">
+								<span class="weui-icon-checked"></span>
+							</div>
+						</label>
+					</div>
+					<div class="weui-cells__title">规格</div>					
+					<div class="weui-cell">
+						<div class="weui-cell__hd"><label class="weui-label">宽</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="text" name="width" placeholder="数字"/>
+						</div>
+					</div>					
+					<div class="weui-cell">
+						<div class="weui-cell__hd"><label class="weui-label">长</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="text" name="height" placeholder="数字"/>
+						</div>
+					</div>
+					<div class="weui-cell">
+							<div class="weui-cell__hd"><label class="weui-label">厚度（um）</label></div>
+							<div class="weui-cell__bd">
+								<input class="weui-input" type="number" name="houdu" pattern="[0-9]*" placeholder="数字"/>
+							</div>
+					</div>
+					<div class="weui-cells__title">币种</div>
+					<div class="weui-cells weui-cells_radio">
+						<label class="weui-cell weui-check__label" for="x13">
+							<div class="weui-cell__bd">
+								<p>美元</p>
+							</div>
+							<div class="weui-cell__ft">
+								<input type="radio" class="weui-check" name="bizhong" value="d" checked="checked"  id="x13">
+								<span class="weui-icon-checked"></span>
+							</div>
+						</label>
+						<label class="weui-cell weui-check__label" for="x14">
+							<div class="weui-cell__bd">
+								<p>人民币</p>
+								</div>
+								<div class="weui-cell__ft">
+									<input type="radio" name="bizhong" class="weui-check" value="r" id="x14">
+									<span class="weui-icon-checked"></span>
+								</div>
+							</label>
+						</div>
+						<div class="weui-cells__title">薄膜</div>
+						<div class="weui-cell">
+							<div class="weui-cell__hd"><label class="weui-label">薄膜价格</label></div>
+							<div class="weui-cell__bd">
+								<input class="weui-input" type="number" name="danjia" pattern="[0-9]*" placeholder="数字"/>
+							</div>
+							<div class="weui-cell__ft">
+								<label class="weui-vcode-btn">元/吨</label>
+							</div>
+						</div>
+						<div class="weui-cell weui-cell_select weui-cell_select-after">
+							<div class="weui-cell__hd">
+								<label for="" class="weui-label">PA含量</label>
+							</div>
+							<div class="weui-cell__bd">
+								<select class="weui-select" name="hanliang">
+									<option value="1">10%</option>
+									<option value="2">15%</option>
+									<option value="3">18%</option>
+									<option value="4">20%</option>
+									<option value="5">BOPA//PE</option>
+									<option value="6">Other</option>
+									<option value="7">PET//PA/PE</option>
+								</select>
+							</div>
+						</div>
+						<div class="weui-cell weui-cell_select weui-cell_select-after">
+							<div class="weui-cell__hd">
+								<label class="weui-label">彩印</label>
+							</div>
+							<div class="weui-cell__bd">
+								<select class="weui-select" name="secai">
+									<option value="1">0色</option>
+									<option value="2">1色</option>
+									<option value="3">2色</option>
+									<option value="4">3色</option>
+									<option value="5">4色</option>
+									<option value="6">5色</option>
+									<option value="7">6色</option>
+									<option value="8">7色</option>
+									<option value="9">8色</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="weui-cells__tips">Copyright &copy; 2017 make by liuweiky@qq.com</div>
+
+							<div class="weui-btn-area">
+								<a class="weui-btn weui-btn_primary" href="javascript:" id="submit">确定</a>
+							</div>
+				</div>
+			</form>
+	  </div>
+
+	 </script>
+	 
+	 
+	 
+	<script type="text/html" id="tpl_msg_success">
+	</script>
+		
+	<script id="interpolationtmpl" type="text/x-dot-template">
+<div class="page">
+    <div class="weui-msg">
+        <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
+        <div class="weui-msg__text-area">
+            <h2 class="weui-msg__title">操作成功</h2>
+            <p class="weui-msg__desc">价格详情</p>
+        </div>
+        <div class="weui-form-preview" id="sss">
+            <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label" >币种</label>
+                    <em class="weui-form-preview__value">{{=it.bizhong}}</em>
+                </div>
+            </div>
+            <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">综合报价（元/1000个）</label>
+                    <em class="weui-form-preview__value">{{=it.zhbj}}</em>
+                </div>
+            </div>
+             <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">综合单价（元/吨）</label>
+                    <em class="weui-form-preview__value">{{=it.zhdj}}</em>
+                </div>
+            </div>
+             <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">制袋成本（元/1000个）</label>
+                    <em class="weui-form-preview__value">{{=it.zdcb}}</em>
+                </div>
+            </div> 
+             <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">彩印单价（￥元/平）</label>
+                    <em class="weui-form-preview__value">{{=it.cydj}}</em>
+                </div>
+            </div>            
+            <div class="weui-form-preview__bd">
+                 <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">宽*长*厚：（{{=it.danwei }})</label>
+                    <span class="weui-form-preview__value"><span>{{=it.width }}</span> * <span>{{=it.height }}</span> * <span>{{=it.houdu }}</span></span>
+                </div>       
+                 <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">薄膜价格（元/吨）</label>
+                    <span class="weui-form-preview__value">{{=it.danjia }}</span>
+                </div>
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">PA含量</label>
+                    <span class="weui-form-preview__value">{{=it.hanliang }}</span>
+                </div>
+                 <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">彩印</label>
+                    <span class="weui-form-preview__value"> {{=it.secai }} </span>
+                </div>
+                 <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">重/个(g)</label>
+                    <span class="weui-form-preview__value"> {{=it.z }}</span>
+                </div>
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">薄膜成本（元/1000个）</label>
+                    <span class="weui-form-preview__value"> {{=it.bmcb }}</span>
+                </div>
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">综合制袋成本（元/吨）</label>
+                    <span class="weui-form-preview__value"> {{=it.zhzdcb }} </span>
+                </div>
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">密度</label>
+                    <span class="weui-form-preview__value">{{=it.midu }} </span>
+                </div>
+            </div>
+        </div>
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                <a href="javascript:history.back();" class="weui-btn weui-btn_primary">返回</a>
+            </p>
+        </div>
+        <div class="weui-msg__extra-area" style="position: inherit">
+            <div class="weui-footer">
+                <p class="weui-footer__text">Copyright &copy; 2017 make by liuweiky@qq.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+    <script type="text/html" id="tpl_msg_warn">
+<div class="page">
+    <div class="weui-msg">
+        <div class="weui-msg__icon-area"><i class="weui-icon-warn weui-icon_msg"></i></div>
+        <div class="weui-msg__text-area">
+            <h2 class="weui-msg__title">操作失败</h2>
+            <p class="weui-msg__desc">信息不全或没有权限</p>
+        </div>
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                <a href="javascript:history.back();" class="weui-btn weui-btn_primary">返回</a>
+            </p>
+        </div>
+        <div class="weui-msg__extra-area">
+            <div class="weui-footer">
+                <p class="weui-footer__text">Copyright &copy; 2017 make by liuweiky@qq.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+	 
+	 
+	 				<script src="./zepto.min.js"></script>
+				<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+				<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+				<script type='text/javascript' src="./doT.min.js"></script>
+				<script src="./example.js"></script>
+			</body>
+		</html>
